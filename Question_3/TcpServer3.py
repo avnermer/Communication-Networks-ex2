@@ -14,7 +14,7 @@ location_msg = 'Location: /result.html'
 
 server = socket(AF_INET, SOCK_STREAM)
 server_ip = '0.0.0.0'
-server_port = 12346
+server_port = 12345
 # if specified as argument
 #if (args.myPort):
  #   server_port = args.myPort

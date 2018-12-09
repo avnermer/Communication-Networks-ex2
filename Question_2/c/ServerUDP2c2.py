@@ -19,6 +19,7 @@ while True:
         data, sender_info = s.recvfrom(1024)
         count += len(data)
         if count == 22 and not isAlreadySend:
+            # send to client one time
             s.sendto("B", sender_info)
             isAlreadySend = True
-    
+

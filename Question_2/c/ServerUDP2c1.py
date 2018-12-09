@@ -14,6 +14,7 @@ count = 0
 while True:
     data, sender_info = s.recvfrom(15000)
     print("Received: " + data)
+    # count the len of data
     count += len(data)
     if count == 15000:
         s.sendto("B", sender_info)

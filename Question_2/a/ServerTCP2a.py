@@ -17,12 +17,15 @@ while True:
     print 'Connection from: ', client_address
     counter = 0
     data = client_socket.recv(1024)
+    # count the len of all data
     counter += len(data)
     while not data == '':
         print 'Received: ', data
         data = client_socket.recv(1024)
+        # count the len of all data
         counter += len(data)
         if counter == 15000 and not isAlreadySend:
+            # send to client one time
             client_socket.send('B')
             isAlreadySend = True
 

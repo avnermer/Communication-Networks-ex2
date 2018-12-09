@@ -21,9 +21,11 @@ while True:
     while not data == '':
         print 'Received: ', data
         data = client_socket.recv(1024)
+        # count the len of all data
         count += len(data)
-        if count == 22 and not isAlreadySend:
-            client_socket.send('B')
-            isAlreadySend = True
+    if count == 22 and not isAlreadySend:
+        # send to client one time
+        client_socket.send('B')
+        isAlreadySend = True
     print 'Client disconnected'
     client_socket.close()
